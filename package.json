@@ -1,0 +1,12 @@
+{
+  "name": "clavora-studio",
+  "version": "1.0.0",
+  "description": "Clavora Studio Portfolio",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
