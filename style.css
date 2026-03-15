@@ -388,9 +388,63 @@ p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.work-stack-card:nth-child(1) { z-index: 1; margin-top: 0; }
-.work-stack-card:nth-child(2) { z-index: 2; margin-top: 5rem; }
-.work-stack-card:nth-child(3) { z-index: 3; margin-top: 5rem; margin-bottom: 0; } 
+.work-stack-card:nth-child(1) { 
+    z-index: 1; 
+    margin-top: 0; 
+    background: white;
+}
+
+.work-stack-card:nth-child(2) { 
+    z-index: 2; 
+    margin-top: 5rem; 
+    background: #8b0000; /* Dark Red */
+    color: white;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.work-stack-card:nth-child(3) { 
+    z-index: 3; 
+    margin-top: 5rem; 
+    margin-bottom: 0; 
+    background: #000000; /* Black */
+    color: white;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Color overrides for dark cards (2 & 3) */
+.work-stack-card:nth-child(n+2) .work-title,
+.work-stack-card:nth-child(n+2) .desc-bold {
+    color: white;
+}
+
+.work-stack-card:nth-child(n+2) .work-index {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.work-stack-card:nth-child(n+2) .desc-light {
+    color: #cccccc;
+}
+
+.work-stack-card:nth-child(n+2) .work-preview-item {
+    background-color: #1a1a1a;
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.work-stack-card:nth-child(n+2) .work-view-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.work-stack-card:nth-child(n+2) .btn-arrow {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.work-stack-card:nth-child(n+2) .work-view-btn:hover {
+    border-color: white;
+    background: white;
+    color: black;
+}
 /* No margin on last card to remove bottom gap */
 
 .work-card-top {
@@ -536,11 +590,72 @@ p {
 }
 
 @media (max-width: 768px) {
-    .work-stack-card {
-        padding: 2.5rem;
+    .works-stacked {
+        padding: 3rem 5% 1rem;
     }
+    
+    .work-stack-card {
+        padding: 2.5rem 1.5rem;
+        top: 60px;
+        margin-bottom: 5vh;
+    }
+    
+    .work-card-top {
+        margin-bottom: 2rem;
+    }
+    
+    .work-title {
+        font-size: 2.5rem;
+    }
+    
+    .work-index {
+        font-size: 2rem;
+    }
+    
+    .work-card-main {
+        gap: 2rem;
+    }
+    
+    .work-description {
+        margin-bottom: 2rem;
+    }
+    
+    .desc-bold {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    
     .work-preview-item {
-        height: 250px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .work-stack-card {
+        padding: 1.5rem;
+        top: 40px;
+    }
+    
+    .work-title {
+        font-size: 1.8rem;
+    }
+    
+    .work-index {
+        font-size: 1.4rem;
+    }
+    
+    .desc-bold {
+        font-size: 1.1rem;
+    }
+    
+    .work-card-right {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .work-preview-item {
+        height: 160px;
+        width: 100%;
     }
 }
 
